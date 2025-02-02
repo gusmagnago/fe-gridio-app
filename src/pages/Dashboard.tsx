@@ -1,4 +1,5 @@
 import Chart from '../components/chart/Chart';
+import Header from '../components/header/Header';
 import { useChartData } from '../hooks/chart/useChartData';
 
 export const Dashboard = () => {
@@ -16,7 +17,8 @@ export const Dashboard = () => {
 
   const totalCst = seriesData.reduce((acc, value) => acc + value, 0);
   return (
-    <div className='w-full h-screen flex items-center'>
+    <div className='w-full h-screen flex items-center flex-col'>
+      <Header />
       <div className='w-full p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12'>
         <div className=' w-full pb-10'>
           <p className='text-3xl font-normal text-gray-500 dark:text-gray-400'>

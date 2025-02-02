@@ -1,48 +1,69 @@
-# Front-End Engineer Homework - Gridio
+# Front-End Engineer Homework - Gridio 🚀
 
-## Description:
+## Description
 
-Build the foundation of a web application that demonstrates your front-end development abilities, using modern web technologies to create a secure, robust and user-friendly interface. The application should include user authentication, data visualization, and user-friendly data management using APIs. This task will evaluate your skills in web application structure, state management, and interface design.
+This project is a technical challenge designed to demonstrate my front-end development skills. The goal is to build a secure, robust, and user-friendly web application using modern web technologies.
 
-## Assignment Overview:
+The application includes:
 
-1. Authentication
-   - A basic authentication system that allows users to log in and log out
-2. Data Visualization
-   - Display a chart showing the number of customers who joined each day.
-3. State Management
-   - Set up a basic state management the application state, such as the login state or network data using a tool like TanStack Query or Redux
+- **User Authentication**
+- **Data Visualization**
+- **State Management**
 
-## Tech Stack (Recommended)
+This challenge evaluates my ability to structure a web application, manage state efficiently, and design an intuitive user interface.
 
-### Framework:
+---
 
-React.ts
+## **📌 Features**
 
-### Build tool:
+✔ **Authentication** - Basic login/logout system using a mock API  
+✔ **Data Visualization** - Dynamic chart displaying customer sign-ups per day  
+✔ **State Management** - Implemented with TanStack Query for caching and API requests  
+✔ **Responsive UI** - Fully styled with Tailwind CSS  
+✔ **Vite as Build Tool** - Fast development environment
 
-Vite
+---
 
-## Sytling:
+## **📌 Tech Stack**
 
-Tailwind CSS
+### **Framework**
 
-## Mock API:
+- React (TypeScript)
 
-[ReqRes](https://reqres.in/)
+### **Build Tool**
 
-## Authentication Credentials:
+- Vite
 
-```sh
-The application uses the [DummyJSON](https://dummyjson.com/) for authentication. DummyJSON provides pre-defined login credentials. Please check the API documentation: [DummyJSON Auth Login to find valid credentials](https://dummyjson.com/docs/auth#auth-login).
-```
+### **Styling**
 
-## Running the project
+- Tailwind CSS
 
-### Clone the repository:
+### **State Management**
+
+- TanStack Query
+
+### **Mock API**
+
+- [ReqRes](https://reqres.in/) (User authentication)
+- [DummyJSON](https://dummyjson.com/) (Customer data for charts)
+
+---
+
+## **📌 Authentication Credentials**
+
+The application uses the [DummyJSON](https://dummyjson.com/) API for authentication. DummyJSON provides **pre-defined login credentials**.  
+📌 Please check the official API documentation for valid credentials:  
+🔗 [DummyJSON Auth Login](https://dummyjson.com/docs/auth#auth-login)
+
+---
+
+## **📌 Running the Project**
+
+### Clone the repository\*\*
 
 ```sh
 git clone https://github.com/gusmagnago/fe-gridio-app.git
+
 ```
 
 ### Install dependencies:
@@ -56,3 +77,7 @@ npm install
 ```sh
 npm run dev
 ```
+
+- The project will start on http://localhost:5173/.
+
+### Thanks! 🚀
