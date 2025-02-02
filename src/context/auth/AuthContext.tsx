@@ -1,30 +1,32 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { createContext, ReactNode, useContext } from 'react';
+import { createContext, ReactNode, useContext, useState } from 'react';
 import { login } from '../../api/auth/auth';
-import { ISingin } from '../../api/auth/auth.types';
-
-interface IAuthContext {
-  login: ({ username, password }: ISingin) => Promise<boolean>;
-  logout: () => void;
-  token: string | null;
-}
+import { IAuthContext, IAuthLogin } from './AuthContext.types';
+import { AUTHTOKEN } from '../../utils/variables';
 
 const AuthContext = createContext<IAuthContext | undefined>(undefined);
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
   const queryClient = useQueryClient();
-  const token = queryClient.getQueryData<string>(['authToken']) || null;
+  const [token, setToken] = useState<string | null>(() => {
+    return localStorage.getItem(AUTHTOKEN) || null;
+  });
 
   const signInMutation = useMutation({
     mutationFn: login,
-    onSuccess: (data) => {
-      queryClient.setQueryData(['authToken'], data.accessToken);
+    onSuccess: (data, options) => {
+      const { rememberMe } = options as IAuthLogin;
+      setToken(data.accessToken);
+
+      if (rememberMe) {
+        localStorage.setItem(AUTHTOKEN, data.accessToken);
+      }
     },
   });
 
-  const loginHandler = async ({ username, password }: ISingin) => {
+  const loginHandler = async (credentials: IAuthLogin) => {
     try {
-      await signInMutation.mutateAsync({ username, password });
+      await signInMutation.mutateAsync(credentials);
       return true;
     } catch (error) {
       return false;
@@ -32,7 +34,9 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const logoutHandler = () => {
-    queryClient.removeQueries({ queryKey: ['authToken'] });
+    queryClient.removeQueries({ queryKey: [AUTHTOKEN] });
+    localStorage.removeItem(AUTHTOKEN);
+    setToken(null);
   };
 
   return (

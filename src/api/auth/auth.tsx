@@ -1,12 +1,11 @@
+import { BASEURL } from '../../utils/variables';
 import { ISigninResponse, ISingin } from './auth.types';
-
-export const baseUrl = 'https://dummyjson.com/';
 
 export const login = async ({
   username,
   password,
 }: ISingin): Promise<ISigninResponse> => {
-  const res = await fetch(`${baseUrl}/auth/login`, {
+  const res = await fetch(`${BASEURL}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password }),
