@@ -8,4 +8,6 @@ export interface IAuthContext {
   login: (credentials: IAuthLogin) => Promise<boolean>;
   logout: () => void;
   token: string | null;
+  isLoginLoading?: boolean;
+  loginError: Error | null;
 }

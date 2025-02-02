@@ -5,7 +5,7 @@ export const login = async ({
   username,
   password,
 }: ISingin): Promise<ISigninResponse> => {
-  const res = await fetch(`${BASEURL}/auth/login`, {
+  const res = await fetch(`${BASEURL}auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password }),

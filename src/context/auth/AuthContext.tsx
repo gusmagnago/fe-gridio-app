@@ -34,14 +34,20 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const logoutHandler = () => {
-    queryClient.removeQueries({ queryKey: [AUTHTOKEN] });
+    queryClient.removeQueries({ queryKey: ['authToken'] });
     localStorage.removeItem(AUTHTOKEN);
     setToken(null);
   };
 
   return (
     <AuthContext.Provider
-      value={{ login: loginHandler, logout: logoutHandler, token }}
+      value={{
+        login: loginHandler,
+        logout: logoutHandler,
+        token,
+        isLoginLoading: signInMutation.isPending,
+        loginError: signInMutation.error,
+      }}
     >
       {children}
     </AuthContext.Provider>
