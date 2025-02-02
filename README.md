@@ -30,7 +30,12 @@ Tailwind CSS
 ## Mock API:
 
 [ReqRes](https://reqres.in/)
-[DummyJSON](https://dummyjson.com/)
+
+## Authentication Credentials:
+
+```sh
+The application uses the [DummyJSON](https://dummyjson.com/) for authentication. DummyJSON provides pre-defined login credentials. Please check the API documentation: [DummyJSON Auth Login to find valid credentials](https://dummyjson.com/docs/auth#auth-login).
+```
 
 ## Running the project
 
