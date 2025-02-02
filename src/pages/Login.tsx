@@ -74,7 +74,7 @@ export const Login = () => {
             <div className='pt-2 flex justify-center'>
               {loginError && (
                 <p className='text-red-500'>
-                  {loginError.message || 'Erro no login.'}
+                  {loginError.message || 'Error when loggin in.'}
                 </p>
               )}
             </div>
