@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Front-End Engineer Homework - Gridio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description:
 
-Currently, two official plugins are available:
+Build the foundation of a web application that demonstrates your front-end development abilities, using modern web technologies to create a secure, robust and user-friendly interface. The application should include user authentication, data visualization, and user-friendly data management using APIs. This task will evaluate your skills in web application structure, state management, and interface design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Assignment Overview:
 
-## Expanding the ESLint configuration
+1. Authentication
+   - A basic authentication system that allows users to log in and log out
+2. Data Visualization
+   - Display a chart showing the number of customers who joined each day.
+3. State Management
+   - Set up a basic state management the application state, such as the login state or network data using a tool like TanStack Query or Redux
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tech Stack (Recommended)
 
-- Configure the top-level `parserOptions` property like this:
+### Framework:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+React.ts
+
+### Build tool:
+
+Vite
+
+## Sytling:
+
+Tailwind CSS
+
+## Mock API:
+
+[ReqRes](https://reqres.in/)
+[DummyJSON](https://dummyjson.com/)
+
+## Running the project
+
+### Clone the repository:
+
+```sh
+git clone https://github.com/gusmagnago/fe-gridio-app.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```sh
+npm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Run the project in development mode:
+
+```sh
+npm run dev
 ```
